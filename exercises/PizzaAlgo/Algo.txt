@@ -1,1 +1,11 @@
 Steps To Ordering a Pizza
+
+1. Decide the restaurant
+2. Decide how many people are eating
+3. Calculate how many pizzas
+4. Decide the toppings
+5. Calculate the total
+6. Decide pick up or delivery
+7. Calculate Pay
+8. Pick up or get delivered
+9. Enjoy
