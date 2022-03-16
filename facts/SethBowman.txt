@@ -1,2 +1,7 @@
 Javascript is cool!
 Nate says Seth is wrong about C#...
+Another line for a commit
+that is 
+not 
+a 
+pirate flag.
