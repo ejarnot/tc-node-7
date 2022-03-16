@@ -1,15 +1,2 @@
 Linus Torvalds intended to name Linux as the kernel Freax, but Ari Lemmke instead gave him a folder called “linux” to upload his kernel to, thus the name "Linux" came from "Linus’ Minix".
-You
-shouldn't
-have
-this
-in
-your
-file
-unless
-you
-and
-I
-are
-same
-wavelength.
+Seth was here! C# rules!
