@@ -1,6 +1,7 @@
 Steps To Ordering a Pizza
 
 1. Decide the restaurant
+    1a. Find the restaurant's website
 2. Decide how many people are eating
 3. Calculate how many pizzas
 4. Decide the toppings
