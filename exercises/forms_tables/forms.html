@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <form>
+      <!-- name, email, password, dob, phone -->
+      <div class="form-group">
+        <label for="userName">Name</label>
+        <input
+          type="text"
+          id="userName"
+          name="userName"
+          placeholder="John Doe"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="userEmail">Email</label>
+        <input
+          type="email"
+          id="userEmail"
+          name="userEmail"
+          placeholder="john@email.com"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="userPhone">Phone</label>
+        <input type="tel" id="userPhone" name="userPhone" pattern="[0-9]{10}" />
+      </div>
+
+      <div class="form-group">
+        <label for="userDOB">Date of Birth</label>
+        <input type="date" />
+      </div>
+
+      <div class="form-group">
+        <label for="userWord">Provide a 5 letter word for security</label>
+        <input
+          type="text"
+          id="userWord"
+          name="userWord"
+          placeholder="apple"
+          minlength="5"
+          maxlength="5"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="userNum">Provide a number between 1 and 100</label>
+        <input
+          type="number"
+          id="userNum"
+          name="userNum"
+          placeholder="1"
+          min="1"
+          max="100"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <fieldset>
+          <legend>What is your favorite programming language?</legend>
+          <input type="radio" id="js" name="favProgrammingLanguage" />
+          <label for="js">JavaScript</label>
+          <input type="radio" id="cs" name="favProgrammingLanguage" />
+          <label for="cs">CSharp</label>
+          <input type="radio" id="other" name="favProgrammingLanguage" />
+          <label for="other">Other</label>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="optIn" name="optIn" />
+        <label for="optIn">Yes! Email me every week.</label>
+      </div>
+
+      <div class="form-grop">
+        <label for="additionalComments">Additional Comments</label>
+        <textarea
+          id="additionalComments"
+          name="additionalComments"
+          placeholder="Comments..."
+          rows="10"
+          cols="10"
+        ></textarea>
+      </div>
+
+      <!-- <input type="submit" value="Submit" /> -->
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
