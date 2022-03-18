@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+form {
+  width: 100%;
+  max-width: 512px;
+  min-height: 50vh;
+  padding: 2rem;
+  border: 1px solid black;
+}
+
+/* Relative Unit */
+/* 
+100%
+1em - ratio of the inherited font-size
+1rem - ratio of the root font-size
+100vh - percentage of the viewport height
+100vw - percentage of the viewport width
+100vmin - percentage of the shorter viewport side
+100vmax - percentage of the longer viewport side
+*/
