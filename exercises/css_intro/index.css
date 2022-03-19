@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.border-black {
+  border: 1px solid black;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.max-w-600 {
+  max-width: 600px;
+}
+
+.max-w-400 {
+  max-width: 400px;
+}
+
+.max-w-800 {
+  max-width: 800px;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.my-4 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
