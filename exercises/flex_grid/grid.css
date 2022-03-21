@@ -1,6 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .grid-item {
   background-color: lightblue;
-  width: 200px;
-  height: 200px;
   border: 1px dotted black;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "a a a a a" "b c c c d" "b c c c d" "b c c c d" "e e e e e";
+  background-color: #333;
+  width: 100vw;
+  min-height: 100vh;
+  height: fit-content;
+}
+
+header {
+  grid-area: a;
+}
+
+#box2 {
+  grid-area: b;
+}
+
+#box3 {
+  grid-area: c;
+}
+
+#box4 {
+  grid-area: d;
+}
+
+#box5 {
+  grid-area: e;
 }
