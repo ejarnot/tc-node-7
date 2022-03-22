@@ -1,6 +1,9 @@
 const hr = document.querySelector("#hr");
 const min = document.querySelector("#min");
 const ampm = document.querySelector("#ampm");
+const date = document.querySelector("#date");
+
+date.textContent = new Date().toDateString();
 
 const circle = document.querySelector("circle");
 let radius = circle.r.baseVal.value;
@@ -60,6 +63,7 @@ function updateTime() {
       hr.classList.remove("flash");
     }, 2000);
     hr.textContent = hrs;
+    date.textContent = currentTime.toDateString();
   }
 }
 
