@@ -1,39 +1,59 @@
-let product = "Juicy Fruit";
+// Single line comment
 
-let manufacturer = "Wrigley's";
+/*
+multi
+line
+comment
+*/
 
-let gumCount = 15;
+/*
+Exercise 1: Declaring Variables
+Declare a variable named firstName using the const keyword, and assign your name as the string value */
+const firstName = "Frodo";
 
-let isGood = true;
+// Declare a variable named lastName using the let keyword, and assign your name as the string value
+let lastName = "Baggins";
 
-let veryLargeNumber = 9007199250000000n;
+// Declare a variable named age using the var keyword, and assign your age as the number value
+var age = 51;
 
-let uniqueSymbol = Symbol("id");
+// ASI, or Automatic Semicolon Insertion
 
-let notDefined;
+/*
+Exercise 2: Working with Strings#
+Declare a variable named fullName using the let keyword, and assign your firstName plus your lastName as the string value
+You will need to use concatenation, combining two string values with the + operator
+Ex: "FirstName" + "LastName" // would equal "FirstNameLastName"
+Print the value of fullName to the console (to open you browser console in Google Chrome, right-click and press "Inspect" or fn+F12) */
+let fullName = firstName + " " + lastName; // "Frodo Baggins"
+let templateFullname = `${firstName} ${lastName}`; // "Frodo Baggins"
 
-let answer = null;
+console.log(fullName);
+console.log(templateFullname);
 
-// Concatenation
-let gumInfo =
-  "I have " +
-  gumCount +
-  " pieces of gum in my " +
-  manufacturer +
-  " " +
-  product +
-  " pack.";
+/*
+Exercise 3#
+Declare a variable named myStory using the let keyword, and assign a string with 3 sentences detailing:
+An introduction using your fullName variable.
+An introduction using your city variable.
+An introduction using your favorite pastime variable.
+Be sure to use variables as the above answers (declare and assign variables if you haven't already)
+Print the result of myStory to the browser console using console.log() (passing any value into the parentheses to be printed)
+Example
+let myStory = `Hello! My name is ${fullName}. I live in ${city}. I enjoy ${pastime} and coding!`;
+console.log(myStory);
+BONUS: Complete step two using a template literal string instead of concatenation
+Template strings can include placeholders, ${variableValue}, where you can inject variable values into a string
+*/
 
-// "I have 15 pieces of gum in my Wrigley's Juicy Fruit pack."
+let myStory; // undefined
 
-// Interpolation
-let gumTemplateInfo = `I have ${gumCount} pieces of gum in my ${manufacturer} ${product} pack.`;
+let home = "Shire";
 
-// "I have 15 pieces of gum in my Wrigley's Juicy Fruit pack."
+let pasttime = "adventuring";
 
-console.log("Hello World!");
-console.log(manufacturer + " " + product);
+home = "Grey Haven";
 
-product = "Double Mint";
+myStory = `My name is ${fullName}. I reside at ${home}. I enjoy ${pasttime}.`;
 
-console.log(manufacturer + " " + product);
+console.log(myStory);
