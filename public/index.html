@@ -11,10 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/index.css" />
     <script src="./js/time.js" defer></script>
-    <script src="./js/index.js" defer></script>
+    <!-- <script src="./js/index.js" defer></script> -->
+    <script src="../exercises/js_intro/index.js" defer></script>
   </head>
   <body>
-    <div class="root d-flex justify-content-center align-items-center">
+    <div class="root d-flex flex-column justify-content-center align-items-center">
       <svg class="progress-ring">
         <circle
           class="seconds-ring"
@@ -26,6 +27,7 @@
           cy="60"
         />
       </svg>
+      <span id="date">Today</span>
       <div class="img-container">
         <span id="hr" class="digit">00</span><span class="digit">:</span
         ><span id="min" class="digit">00</span

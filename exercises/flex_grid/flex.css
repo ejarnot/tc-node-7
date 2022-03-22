@@ -2,24 +2,26 @@
   box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.flex-container {
+.d-flex {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
-form {
-  width: 100%;
-  max-width: 512px;
-  min-height: 50vh;
-  padding: 2rem;
-  border: 1px solid black;
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
 }
 
 /* Relative Unit */
