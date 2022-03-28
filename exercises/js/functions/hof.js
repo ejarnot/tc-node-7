@@ -88,6 +88,21 @@ function counter2(startingPoint = 0, incrementValue = 1) {
   return count;
 }
 
-console.log(counter2()) // 1
-console.log(counter2()) // 1
-console.log(counter2()) // 1
+console.log(counter2()); // 1
+console.log(counter2()); // 1
+console.log(counter2()); // 1
+
+function toExp(exp) {
+  return function (num) {
+    return num ** exp;
+  };
+}
+
+const squared = toExp(2);
+const cubed = toExp(3);
+const quad = toExp(4);
+
+squared(4); // 16
+squared(5); // 25
+cubed(3); // 27
+quad(2); // 16
