@@ -2,8 +2,8 @@
   --dark-secondary: #133b5c;
   --tc-blue: #0094c8;
   --tc-gray: #8b8a8d;
-  --dark-primary: #1d2d50;
-  --dark-secondary: #133b5c;
+  --dark-primary: #032822; /* #1d2d50 */
+  --dark-secondary: #228230; /* #133b5c */
   --dark-info: #1e5f74;
   --dark-warning: #fcdab7;
 }
