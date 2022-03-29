@@ -38,7 +38,7 @@ class Runner extends Person {
   constructor(name, city) {
     super(name, city);
 
-    this.start = Date.now();
+    this.start = null;
     this.end = null;
   }
 
@@ -46,26 +46,73 @@ class Runner extends Person {
     this.end = Date.now();
   }
 
-  displayDuration() {
-    console.log(
-      `${this.name} from ${this.city} finished in ${
-        (this.end - this.start) / 1000
-      } sec(s).`
+  formatResult() {
+    return `${this.name} | ${this.city} | ${
+      (this.end - this.start) / 1000
+    } sec(s).`;
+  }
+}
+
+class Race {
+  constructor(title, date = new Date()) {
+    this.entries = [];
+    this.results = [];
+    this.date = date;
+    this.title = title;
+    this.startTime;
+  }
+
+  start() {
+    this.startTime = Date.now();
+    this.entries.forEach((runner) => (runner.start = this.startTime));
+  }
+
+  createEntry() {
+    let name = prompt("Name:");
+    let city = prompt("City:");
+
+    this.loadEntry(name, city);
+
+    let cont = prompt(
+      "Do you have more entries to add?\nType 'yes' to continue."
+    );
+
+    if (cont == "yes") {
+      this.createEntry();
+    } else {
+      this.start();
+    }
+  }
+
+  loadEntry(name, city) {
+    let entry = new Runner(name, city);
+    this.entries.push(entry);
+  }
+
+  markFinisher(name) {
+    let finisher = this.entries.find((runner) => {
+      if (runner.name == name) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+
+    finisher.finish();
+
+    this.results.push(finisher);
+
+    if (this.entries.length == this.results.length) {
+      this.displayResults();
+    }
+  }
+
+  displayResults() {
+    console.log("======Results======");
+    this.results.forEach((runner, i) =>
+      console.log(`${i + 1}. ${runner.formatResult()}`)
     );
   }
 }
 
-const ben = new Runner("Ben", "Birmingham");
-const seth = new Runner("Seth", "Warrior");
-
-console.log(ben);
-
-setTimeout(() => {
-  ben.finish();
-  ben.displayDuration();
-}, 5000);
-
-setTimeout(() => {
-  seth.finish();
-  seth.displayDuration();
-}, 8000);
+const race = new Race("TrueCoders Race", new Date());
