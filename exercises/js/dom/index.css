@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #eee;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.root {
+  text-align: center;
+  min-height: 100vh;
+  background-color: #222;
+  padding: 1rem;
+  position: relative;
+}
+
+/*--------------- EXERCISE ---------------- */
+.exercise-container {
+  text-align: center;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0 0 2rem #000;
+  max-width: 600px;
+  width: 100%;
+}
+
+.exercise4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 200px;
+  height: 200px;
+  background: green;
+  position: relative;
+}
+
+#box {
+  width: 50px;
+  height: 50px;
+  left: 0;
+  top: 0;
+  background: red;
+  position: absolute;
+  animation: cycle 2s infinite;
+}
+
+@keyframes cycle {
+  25% {
+    left: 150px;
+    top: 0;
+  }
+  50% {
+    left: 150px;
+    top: 150px;
+  }
+  75% {
+    left: 0px;
+    top: 150px;
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+
+.button {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: inherit;
+  background-color: darkcyan;
+  cursor: pointer;
+}
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modal {
+  background-color: #eee;
+  color: #222;
+  padding: 2rem;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.alert-drawer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  background: transparent;
+  max-width: 300px;
+  width: 100%;
+}
+
+.alert {
+  color: #eee;
+  box-shadow: 0px 0px 5px #333;
+  padding: 1rem;
+  margin-top: 5px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.alert-failure {
+  background-color: tomato;
+}
+
+.alert-success {
+  background-color: lightgreen;
+}
