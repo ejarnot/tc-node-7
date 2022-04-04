@@ -68,3 +68,7 @@
 //     document.body.innerHTML = `<img src="${data.data.images.original.url}" alt="${data.data.title}">`;
 //   })
 //   .catch((err) => console.error(err));
+
+let today = new Date("10-18-2023").getTime();
+let in100Days = today - 100 * 24 * 3600 * 1000;
+console.log(new Date(in100Days).toDateString());
