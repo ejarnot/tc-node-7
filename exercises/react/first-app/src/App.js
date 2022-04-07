@@ -1,43 +1,46 @@
 import "./App.css";
 import { Component } from "react";
 
-class App extends Component {
-  constructor() {
-    super();
+function Title({ onClick, className, children }) {
+  return (
+    <h1 onClick={onClick} className={className}>
+      {children}
+    </h1>
+  );
+}
 
-    const boxes = [];
-    let numBoxes = 24;
-    for (let i = 1; 1 <= numBoxes; i++) {
-      boxes.push({
-        id: i,
-        color: `rgb(${this.getRandomColor()}, ${this.getRandomColor()}, ${this.getRandomColor()})`,
-      });
-    }
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    let class1 = ["Ben", "Seth", "Cruz", "Amoriss"];
+    let class2 = ["Michael", "John", "Jeremy", "Brittany", "Phillip"];
+
+    let combined = [...class1, ...class2];
 
     this.state = {
-      boxes,
+      title: "Hello World",
+      count: 0,
+      students: combined,
     };
   }
 
-  getRandomColor() {
-    return 0;
-  }
-
   render() {
+    let { title, count, students } = this.state;
+    let props = {
+      className: "main-title",
+      onClick: () => alert(`You clicked the title ${count} time(s)`),
+    };
+
     return (
       <div className="App">
         <header className="App-header">
-          {/* Rendering a List in React */}
-          {this.boxes.map((box) => {
-            return (
-              <div
-                key={box.id}
-                style={`width: 100px; height: 100px; background-color: ${box.color}; border: 1px solid green; color: white`}
-              >
-                {box.id}
-              </div>
-            );
-          })}
+          <Title {...props}>{title}</Title>
+          <ul>
+            {students.map((student, i) => {
+              return <li key={`${student}${i}`}>{student}</li>;
+            })}
+          </ul>
         </header>
       </div>
     );
