@@ -8,12 +8,13 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.controller = new AbortController();
+
     this.state = {
       temp: null,
-      isLoaded: false,
+      hasLoaded: false,
+      city: "Birmingham",
     };
-
-    this.controller;
   }
 
   componentDidMount() {
@@ -24,27 +25,40 @@ class App extends Component {
     }
   }
 
+  componentDidUpdate() {
+    console.log(this.state);
+  }
+
   componentWillUnmount() {
     this.controller.abort();
   }
 
-  async fetchWeather() {
-    this.controller = new AbortController();
+  fetchWeather = async () => {
     let res = await fetch(
-      WEATHER_URL + "?units=imperial&q=Birmingham,us-al&appid=" + WEATHER_KEY,
+      `${WEATHER_URL}?units=imperial&q=${this.state.city}&appid=${WEATHER_KEY}`,
       { signal: this.controller.signal }
     );
     let data = await res.json();
-    this.setState({ temp: data.main.temp, isLoaded: true });
-  }
+    this.setState({ temp: data.main.temp, hasLoaded: true });
+  };
+
+  handleCityChange = (event) => {
+    this.setState({ city: event.target.value });
+  };
 
   render() {
-    if (this.state.isLoaded) {
+    if (this.state.hasLoaded) {
       return (
         <div className="App">
           <header className="App-header">
             <h1>Fetch Requests in React</h1>
             <p>Currently {this.state.temp} degrees.</p>
+            <input
+              type="text"
+              value={this.state.city}
+              onChange={this.handleCityChange}
+            />
+            <button onClick={this.fetchWeather}>Get Weather</button>
           </header>
         </div>
       );
