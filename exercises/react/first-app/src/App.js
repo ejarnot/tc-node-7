@@ -12,6 +12,8 @@ class App extends Component {
       temp: null,
       isLoaded: false,
     };
+
+    this.controller;
   }
 
   componentDidMount() {
@@ -22,9 +24,15 @@ class App extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.controller.abort();
+  }
+
   async fetchWeather() {
+    this.controller = new AbortController();
     let res = await fetch(
-      WEATHER_URL + "?units=imperial&q=Birmingham,us-al&appid=" + WEATHER_KEY
+      WEATHER_URL + "?units=imperial&q=Birmingham,us-al&appid=" + WEATHER_KEY,
+      { signal: this.controller.signal }
     );
     let data = await res.json();
     this.setState({ temp: data.main.temp, isLoaded: true });

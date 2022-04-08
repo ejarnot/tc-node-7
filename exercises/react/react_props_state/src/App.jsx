@@ -97,7 +97,7 @@ class App extends Component {
                 id={box.id}
                 color={box.color}
                 onClick={this.handleBoxClick}
-                onDbClick={this.handle}
+                onDbClick={this.handleBoxRemoval}
               />
             );
           })}
