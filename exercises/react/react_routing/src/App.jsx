@@ -7,10 +7,8 @@ const App = () => {
       <nav>
         <ul>
           {routes.map((route) => (
-            <li>
-              <NavLink key={route.path} to={route.path}>
-                {route.title}
-              </NavLink>
+            <li key={route.path}>
+              <NavLink to={route.path}>{route.title}</NavLink>
             </li>
           ))}
         </ul>
