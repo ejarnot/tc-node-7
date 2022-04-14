@@ -1,12 +1,9 @@
-Object.defineProperty(Error.prototype, "message", {
-  configurable: true,
-  enumerable: true,
-  get() {
-    return "custom";
-  },
-  set() {
-    message = "custom";
-  },
-});
+function Component(props) {
+  return <h1>Hello World</h1>;
+}
 
-console.log(new Error("shouldn't be this").message);
+class App {
+  render() {
+    return <h1>H3llo Wor1d</h1>
+  }
+}
