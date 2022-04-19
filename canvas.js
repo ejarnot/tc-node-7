@@ -1,9 +1,5 @@
-function Component(props) {
-  return <h1>Hello World</h1>;
+function func(x, y) {
+  return [1, x, 3, y, 5];
 }
 
-class App {
-  render() {
-    return <h1>H3llo Wor1d</h1>
-  }
-}
+func(2, 4); // [1, 2, 3, 4, 5]
