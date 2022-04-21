@@ -1,12 +1,5 @@
-Object.defineProperty(Error.prototype, "message", {
-  configurable: true,
-  enumerable: true,
-  get() {
-    return "custom";
-  },
-  set() {
-    message = "custom";
-  },
-});
+function func(x, y) {
+  return [1, x, 3, y, 5];
+}
 
-console.log(new Error("shouldn't be this").message);
+func(2, 4); // [1, 2, 3, 4, 5]
