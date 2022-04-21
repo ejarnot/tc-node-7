@@ -1,5 +1,5 @@
 // import http from "http"
-const http = require("http");
+const { createServer } = require("http");
 // import { getRouteInfo } from "./utils"
 const { getRouteInfo } = require("./routes/utils");
 const port = 3000;
@@ -35,7 +35,11 @@ const requestHandler = (req, res) => {
   });
 };
 
-const server = http.createServer(requestHandler);
+const server = createServer(requestHandler);
+
+server.on("request", (req, res) => {
+  console.log(`Incoming "${req.method}" request to "${req.url}"`);
+});
 
 server.listen(port, () => {
   console.log(`Server listening on port ${port}...`);
