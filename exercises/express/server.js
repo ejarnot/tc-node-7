@@ -1,6 +1,7 @@
 const express = require("express");
 const { join } = require("path");
 const morgan = require("morgan");
+const router = require("./routes");
 
 const port = 3000;
 
@@ -10,19 +11,24 @@ app.use(express.json());
 
 app.use(morgan("dev"));
 
-app.get("/", (req, res) => {
-  res.sendFile(join(__dirname, "./public/index.html"));
+// Checks route middleware from /routes/index.js
+app.use(router);
+
+// Handle 404s
+app.use((req, res, next) => {
+  try {
+    res.status(404).sendFile(join(__dirname, "./public/notFound.html"));
+  } catch (err) {
+    next(err);
+  }
 });
 
-app.get("/about", (req, res) => {
-  res.json({ success: true, query: req.query });
-});
-
-app.post("/signup/:secret", (req, res) => {
-  res.json({
-    msg: `${req.body.name}, thanks for signing up!`,
-    secret: req.params.secret,
-  });
+// Handle Errors
+app.use((err, req, res, next) => {
+  console.error(err);
+  res
+    .status(500)
+    .json({ msg: "An error occurred on the server. Try again later", err });
 });
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
