@@ -18,7 +18,7 @@ const contents = [
   },
   {
     author: "Michael",
-    content: "C# is chirp",
+    content: "C# is saweeet",
   },
   {
     author: "Cruz",
