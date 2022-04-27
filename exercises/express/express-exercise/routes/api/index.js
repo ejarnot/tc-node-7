@@ -1,5 +1,5 @@
 const express = require("express");
-const { readFile, writeFile, rmdirSync } = require("fs");
+const { readFile, writeFile } = require("fs");
 const { join } = require("path");
 
 const router = express.Router();
