@@ -1,8 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const router = require("./routes");
-
-const port = 8080;
+const { port } = require("./config");
 
 const app = express();
 
